@@ -39,3 +39,9 @@ function sortearAmigo() {
         resultado.innerHTML = `El amigo secreto sorteado es: ${amigoAleatorio}`;
     }
 }
+
+txtAmigo.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        agregarAmigo();
+    }
+});
