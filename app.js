@@ -16,11 +16,7 @@ function agregarAmigo() {
 
     txtAmigo.focus();
 
-    console.log(amigos)
-
     actualizarAmigos();
-
-    return;
 }
 
 function actualizarAmigos() {
@@ -28,5 +24,18 @@ function actualizarAmigos() {
 
     for (const amigo of amigos) {
         listaAmigos.innerHTML += `<li>${amigo}</li>`;
+    }
+}
+
+function sortearAmigo() {
+    if (amigos.length === 0) {
+        alert("No se ha ingresado nigún nombre para sortear");
+    } else {
+        let indiciAleatorio = Math.floor(Math.random() * amigos.length);
+        let amigoAleatorio = amigos[indiciAleatorio];
+
+        listaAmigos.innerHTML = "";
+
+        resultado.innerHTML = `El amigo secreto sorteado es: ${amigoAleatorio}`;
     }
 }
